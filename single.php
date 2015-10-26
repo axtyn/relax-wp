@@ -50,8 +50,12 @@
 	</div>
 	<div class="col-md-2"></div>
 
-
-
+<div class="row">
+	<div class="col-md-12">
+<div class="navigation">
+<div class="alignleft"><?php posts_nav_link('','','&laquo; Artículos Anteriores')?></div>
+<div class="alignright"><?php posts_nav_link('','Artículos Siguientes &raquo;','')?></div></div>
+</div></div>
 
 		<div class="row blog-footer">
 			<hr>

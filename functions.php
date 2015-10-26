@@ -65,4 +65,10 @@ create_widget('Portada Der','frontright','Se muestra en el lado der');
 create_widget('Sidebar','sidebar','Se muestra en el lado derecho de una página');
 create_widget('Sidebar Blog','blog','Se muestra en el lado derecho del blog');
 
+
+
+
+
+
+
 ?>

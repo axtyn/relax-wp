@@ -1,4 +1,9 @@
+.wrap
+	margin 0 auto
+	max-width 1100px
+	padding 0 10px
 
+//ARTICULO DESTACADO LOOP PERSONALIZADO
 .promoted
 	background-color #efefef
 
@@ -6,18 +11,58 @@
 	margin-bottom 2em
 	position relative
 
+.promoted-post .promoted-data
+	background rgba(182,0,80,0.6)
+	bottom  40px
+	left  20px
+	position  absolute
+	width 500px
+	height 150px
+
 .promoted-post .post-image 
-    height auto
-    max-height 560px
-    min-height 300px
+	height auto
+	max-height 560px
+	min-height 300px
+ 
+.promoted-post .post-title-front
+	font-size 32px
+	text-align left
+	margin 20px 20px
+
+	& a
+		color white
+		text-shadow rgba(0,0,0,0.8) 0px 1px 1px
+
+.promoted-post .promoted-post-meta
+	font-style italic
+	border-top 2px solid #ccc
+	display inline-block
+	width 90%
+	margin 0px 20px
+	font-size 14px
+
+.promoted-post .promoted-author
+	text-align left
+	display inline-block
+
+.promoted-post-meta .author-img
+	display inline-block
+	margin 10px 10px
+	padding 0px
+
+.promoted-post-meta .author-img img	
+	border-radius 50px
+	width 40px
+	height auto
+
+.promoted-post .post-date
+	text-align right
+	display inline-block
+	line-height 50px
 
 
-.wrap
-	margin 0 auto
-	max-width 1100px
-	padding 0 10px
 
-//ARTICULO INDIVIDUAL LOOP
+//ARTICULO INDIVIDUAL LOOP PERSONALIZADO
 article.post
 	display inline-block
 	margin 0 2% 1em 0
