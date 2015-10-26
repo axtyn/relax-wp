@@ -7,7 +7,7 @@
 	<header class="post-header">
 		<figure class="post-image">
 			<?php if ( has_post_thumbnail() )
-					the_post_thumbnail('full');
+					the_post_thumbnail('full',array('class' => 'img-responsive'));
 			?>  
 		<figure>
 
@@ -34,7 +34,7 @@
 			<div class="fecha-single"><?php echo /*the_time('l j, F Y');*/ the_time('F d, Y'); ?></div>
 	  	</div>  
 
-	  	<div class="post-contet"><?php the_content(); ?></div>
+	  	<div class="post-content"><?php the_content(); ?></div>
 	  
 	  	<?php //comments_template(); ?>
 
@@ -50,19 +50,14 @@
 	</div>
 	<div class="col-md-2"></div>
 
-<div class="row">
-	<div class="col-md-12">
-<div class="navigation">
-<div class="alignleft"><?php posts_nav_link('','','&laquo; Artículos Anteriores')?></div>
-<div class="alignright"><?php posts_nav_link('','Artículos Siguientes &raquo;','')?></div></div>
-</div></div>
+
 
 		<div class="row blog-footer">
 			<hr>
 			<?php  get_sidebar('blog'); ?>
 
 			<div class="col-md-4">
-				BANNER AQUI
+				
 			</div>
 		</div>
 

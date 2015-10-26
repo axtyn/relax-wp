@@ -10,14 +10,14 @@
    
       <?php 
       //Definir los parámetros de la consulta a la base de datos
-$args = array(
-    'posts_per_page' => 1
-);
-$loop_alternativo = new WP_Query($args);
-if( $loop_alternativo->have_posts() ):
-    while( $loop_alternativo->have_posts() ): $loop_alternativo->the_post();
-       //Ya estamos en el bucle alternativo
-?>
+        $args = array(
+            'posts_per_page' => 1
+        );
+        $loop_alternativo = new WP_Query($args);
+        if( $loop_alternativo->have_posts() ):
+            while( $loop_alternativo->have_posts() ): $loop_alternativo->the_post();
+               //Ya estamos en el bucle alternativo
+        ?>
     
             <article class="promoted-post">
                 <figure class="post-image">
@@ -38,7 +38,10 @@ if( $loop_alternativo->have_posts() ):
                     </footer>
                 </div>
             </article>
-        <?php endwhile; endif; ?>
+
+        <?php endwhile; ?>
+        <?php endif; ?>
+         <?php wp_reset_postdata(); ?>
 
 
         </div>
@@ -47,12 +50,14 @@ if( $loop_alternativo->have_posts() ):
     <section class="posts-section">
         <div class="wrap">
   
- <?php $args = array(
-    'offset' => 1
-);
- $loop_alternativo = new WP_Query($args);
-?> 
-<?php if ($loop_alternativo->have_posts()) : while($loop_alternativo->have_posts()) : $loop_alternativo->the_post(); ?>
+     <?php $args = array(
+        'posts_per_page' => 9,
+        'offset' => 1
+    );
+     $loop_alternativo = new WP_Query($args);
+    ?> 
+    <?php if ($loop_alternativo->have_posts()) : while($loop_alternativo->have_posts()) : $loop_alternativo->the_post(); ?>
+            
             <article class="post">
                 <header class="post-header">
                     <figure class="post-image-front">
@@ -66,17 +71,37 @@ if( $loop_alternativo->have_posts() ):
                 </footer>
             </article>
     
+
             <!-- SIN CONTENIDO -->
-                    <?php endwhile; else: ?>
-                    <div class="page-header">
-                        <h1>Falta contenido</h1>
-                    </div>  
-                    <p>No hay ninguna entrada publicada en el blog !!!</p>
-                     <?php endif; ?>
-                     <?php wp_reset_postdata(); ?>
-                    <!--  /// --> 
+            <?php endwhile; ?>
+            <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+            <?php else: ?>
+            <div class="page-header">
+                <h1>Falta contenido</h1>
+            </div>  
+            <p>No hay ninguna entrada publicada en el blog !!!</p>
+
+            <?php
+my_page_navi();
+?>
+             <?php endif; ?>
+             <?php wp_reset_postdata(); ?>
+            <!--  /// --> 
         </div>
     </section>
+    </div>
+
+    <div class="pagination">
+        <div class="wrap">
+            <?php            
+            the_posts_pagination( array(
+                'mid_size'  => 2,
+                'prev_text' => __( 'Anterior', 'textdomain' ),
+                'next_text' => __( 'Siguiente', 'textdomain' ),
+            ) );
+            //the_posts_pagination(); ?>
+        </div>
     </div>
 
 
@@ -86,7 +111,7 @@ if( $loop_alternativo->have_posts() ):
         <?php get_sidebar('blog'); ?>
 
         <div class="col-md-4">
-            BANNER AQUI
+            
         </div>
     </div>
 
