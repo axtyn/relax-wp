@@ -49,15 +49,8 @@
 
     <section class="posts-section">
         <div class="wrap">
-  
-     <?php $args = array(
-        'posts_per_page' => 9,
-        'offset' => 1
-    );
-     $loop_alternativo = new WP_Query($args);
-    ?> 
-    <?php if ($loop_alternativo->have_posts()) : while($loop_alternativo->have_posts()) : $loop_alternativo->the_post(); ?>
             
+          <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
             <article class="post">
                 <header class="post-header">
                     <figure class="post-image-front">
@@ -74,8 +67,6 @@
 
             <!-- SIN CONTENIDO -->
             <?php endwhile; ?>
-            <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
             <?php else: ?>
             <div class="page-header">
                 <h1>Falta contenido</h1>
